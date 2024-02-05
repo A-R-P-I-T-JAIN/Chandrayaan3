@@ -7,31 +7,40 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+    <div class="cursor">
+
+    </div>
+    
+    <div class="loading">
+      <h1>Launching Chandrayaan...</h1>
+      <p>5</p>
+    </div>
     <!-- <div class="qwe"> -->
     <input type="checkbox" id="active" />
     <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
     <div class="wrapper2">
       <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./index2.html">Timeline</a></li>
+        <li ><a class="cursor_style" href="./index.html">Home</a></li>
+        <li><a class="cursor_style" href="./index2.html">Timeline</a></li>
         <!-- <li><a href="#">Meet Scientists</a></li> -->
-        <li><a href="./article.html">Articles</a></li>
+        <li><a class="cursor_style" href="./article.html">Articles</a></li>
       </ul>
     </div>
     <!-- </div> -->
 
     <div class="main">
-      <h2>ISRO</h2>
+      <h2 class="cursor_style" >ISRO</h2>
       <video src="./assests/space.mp4" autoplay loop></video>
       <div class="img_temp">
         <img src="./assests/c.jpg" alt="" />
       </div>
-      <h1>CHANDRAYAAN-3</h1>
+      <h1 >CHANDRAYAAN-3</h1>
     </div>
 
     <div class="main2">
       <div class="first">
-        <h1>Chandrayaan3???</h1>
+        <h1 class="cursor_style" >Chandrayaan3???</h1>
         <p>
           Chandrayaan-3 is the third Moon mission by India’s space agency ISRO.
           The goal is to place a lander and rover on the lunar surface and
@@ -47,7 +56,7 @@
         <img src="./assests/ro2.jpg" alt="" />
       </div>
       <div class="first">
-        <h1>CHANDRAYAAN3 LANDING SITE</h1>
+        <h1 class="cursor_style" >CHANDRAYAAN3 LANDING SITE</h1>
         <p>
           The Chandrayaan-3 prime landing site is in the south polar region,
           near the bottom-right of the Moon as seen from Earth.
@@ -57,7 +66,7 @@
         <img src="./assests/landing_site2.png" alt="" />
       </div>
       <div class="first">
-        <h1>What did Chandrayaan-3 do on the Moon?</h1>
+        <h1 class="cursor_style" >What did Chandrayaan-3 do on the Moon?</h1>
         <p>
           A successful touchdown marked a huge achievement for ISRO, placing
           them in a small group of nations that have landed spacecraft on other
@@ -77,10 +86,10 @@
       </div>
     </div>
 
-    <div class="gallery_head">
+    <div class="gallery_head cursor_style">
       <!-- <h1>Image Gallery</h1> -->
       <svg width="490" height="98" viewBox="0 0 490 98" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g id="gallery" filter="url(#filter0_dd_41_4)">
+        <g  id="gallery" filter="url(#filter0_dd_41_4)">
         <path id="Vector" d="M430.094 4.03965L429.693 3.16406H428.73H410.633H408.166L409.301 5.35437L435.617 56.1225V85V86.5H437.117H453.891H455.391V85V56.1218L481.652 5.35324L482.785 3.16406H480.32H462.277H461.314L460.913 4.03965L445.504 37.6974L430.094 4.03965Z" stroke="#FF006A" stroke-width="3"/>
         <path id="Vector_2" d="M347.953 3.16406H346.453V4.66406V85V86.5H347.953H364.506H366.006V85V56.7603H376.735L391.531 85.6831L391.949 86.5H392.866H410.578H412.078V85V84.2275V83.8562L411.904 83.5277L395.244 51.942C397.028 51.0369 398.676 50.0009 400.185 48.8318L400.188 48.83C403.023 46.625 405.213 43.8822 406.747 40.618C408.335 37.2825 409.098 33.3557 409.098 28.8862C409.098 23.3956 407.848 18.659 405.262 14.7598C402.688 10.8787 399.017 7.97728 394.324 6.0374C389.684 4.10428 384.2 3.16406 377.914 3.16406H347.953ZM378.024 40.8491H366.006V19.1304H377.914C380.698 19.1304 382.892 19.6015 384.571 20.4567C386.25 21.3121 387.468 22.5228 388.274 24.1051C389.102 25.7282 389.545 27.7101 389.545 30.1001C389.545 32.3194 389.093 34.2005 388.236 35.7878L388.23 35.7981L388.225 35.8085C387.414 37.3675 386.202 38.589 384.541 39.4835C382.908 40.3627 380.762 40.8491 378.024 40.8491Z" stroke="#FF006A" stroke-width="3"/>
         <path id="Vector_3" d="M339.797 72.0889V70.5889H338.297H302.443V51.4634H332.725H334.225V49.9634V37.3833V35.8833H332.725H302.443V19.1304H338.242H339.742V17.6304V4.66406V3.16406H338.242H302.443H300.943H295.536H294.036H284.391H282.891V4.66406V85V86.5H284.391H294.036H295.536H300.943H302.443H338.297H339.797V85V72.0889Z" stroke="#FF006A" stroke-width="3"/>
@@ -333,5 +342,44 @@
         </div>
       </footer>
     </div>
+    <script>
+      let countdown = document.querySelector(".loading p")
+      let loading = document.querySelector(".loading")
+      const cursor = document.querySelector(".cursor")
+      const cursor_style = document.querySelectorAll(".cursor_style")
+      let count = 4
+      setInterval(() => {
+        setTimeout(() => {
+            count -= 1;
+        },1000)
+        if(count >= 0){
+          countdown.innerHTML = count;
+        } else {
+          // loading.style.animation = "clip 1s ease forwards";
+          loading.style.display = "none"
+        }
+        
+      },1000)
+
+      window.onmousemove = (event) => {
+          cursor.style.left = `${event.pageX}px`;
+          cursor.style.top = `${event.pageY}px`;
+      }
+      window.onscroll = (event) => {
+          cursor.style.left = `${event.pageX}px`;
+          cursor.style.top = `${event.pageY}px`;
+      }
+
+      cursor_style.forEach(c => {
+        c.onmouseenter = (e) => {
+        cursor.classList.add("cursor_scale")
+      }
+      c.onmouseleave = () => {
+        cursor.classList.remove("cursor_scale")
+      }
+      })
+      
+
+    </script>
   </body>
 </html>
